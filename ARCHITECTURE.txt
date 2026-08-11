@@ -1,0 +1,53 @@
+BUILD COMMANDS
+==============
+
+backend/          cd backend          && npm install && npm test
+frontend-react/   cd frontend-react   && npm install && npx vite build
+frontend-angular/ cd frontend-angular && npm install && npx ng build
+
+Full local run (3 terminals, from repo root):
+  1) cd backend          && npm install && node src/app.js        (port 3000)
+  2) cd frontend-angular && npm install && npx ng build           (writes dist/, copy output into frontend-react/public/angular-remote/ before step 3)
+  3) cd frontend-react   && npm install && npx vite build && npx vite preview   (port 4173)
+
+Open http://localhost:4173/ — the React shell renders, calls backend's
+API directly, and embeds the Angular remote live via iframe.
+
+
+ARCHITECTURE — HOW THE PIECES CONNECT
+======================================
+
+                    ┌─────────────────────────┐
+                    │   backend/ (Node+Express) │
+                    │   GET /api/widgets         │
+                    │   GET /health               │
+                    └───────────┬────────────┬───┘
+                                │            │
+                    fetch()     │            │  fetch()
+                                │            │
+              ┌─────────────────▼──┐    ┌────▼──────────────────┐
+              │ frontend-react/     │    │ frontend-angular/     │
+              │ (shell, Vite+React) │    │ (remote, Angular CLI) │
+              │                     │    │                       │
+              │  <iframe src=       │    │  built to dist/,      │
+              │   "/angular-remote/ │◄───┤  copied into shell's  │
+              │   index.html">      │    │  public/angular-remote/│
+              │                     │    │  base href rescoped   │
+              └─────────────────────┘    └────────────────────────┘
+
+- backend/  is the single shared API. Both frontends call it independently
+  — no logic is duplicated between them.
+- frontend-react/  is the shell. It renders its own UI AND embeds the
+  Angular remote via a live iframe — this is what makes the branch a real
+  micro-frontend, not two disconnected apps.
+- frontend-angular/  is a fully independent, separately-buildable app.
+  Its build output is copied into frontend-react/public/angular-remote/
+  so the shell can serve and embed it. This copy step is the one manual
+  "deployment" action a real setup would automate (e.g. via CI publishing
+  the remote to a CDN the shell fetches from at runtime).
+
+quality/  folders (backend/quality/, frontend-angular/quality/) hold the
+tool-trigger fixtures — JavaScript tools live once in backend/ (both
+frontends are JS/TS but frontend-react/ does not re-list the same JS
+tools — see backend/quality/), and TypeScript tools live once in
+frontend-angular/ since that's a genuinely different toolset.

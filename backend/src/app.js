@@ -1,18 +1,13 @@
 "use strict";
-
 const express = require("express");
+const widgetsRouter = require("./routes/widgets");
+const healthRouter = require("./routes/health");
 
 const app = express();
 app.use(express.json());
 
-// Minimal shared API — both frontend-react (shell) and frontend-angular
-// (remote) connect to this, rather than each carrying their own copy of
-// the same backend logic.
-app.get("/api/widgets", (req, res) => {
-  res.json({ widgets: [{ id: 1, label: "Micro-frontend proof widget" }] });
-});
-
-app.get("/health", (req, res) => res.json({ status: "ok" }));
+app.use("/api/widgets", widgetsRouter);
+app.use("/health", healthRouter);
 
 if (require.main === module) {
   const port = process.env.PORT || 3000;

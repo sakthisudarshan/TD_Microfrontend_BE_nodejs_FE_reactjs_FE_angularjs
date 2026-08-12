@@ -1,4 +1,4 @@
-# lizard -- Angular 19
+# lizard -- Angular 18
 
 A single function with multiple branches, enough to genuinely trigger a
 CC score above 1.

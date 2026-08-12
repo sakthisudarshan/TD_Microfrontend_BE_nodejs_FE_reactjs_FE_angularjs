@@ -1,4 +1,4 @@
-# npm-audit — JavaScript / Node.js 20
+# npm-audit — JavaScript / Node.js 22
 
 Scans the real `package.json`/`package-lock.json`. `lodash@4.17.15` is
 intentionally pinned old (same CVE used across this repo's other npm-audit

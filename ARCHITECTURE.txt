@@ -13,10 +13,20 @@ Per-module (still available individually):
 
 Micro-Frontend Platform uses Nx as its build orchestrator - a real,
 widely-used enterprise choice for micro-frontend architectures
-specifically (Nx has first-class support for module federation /
-multi-app workspaces). nx.json + a project.json per module wires each
-module's existing npm/ng scripts as Nx targets with dependsOn: [install],
-so `nx run-many` builds/tests all 3 modules in one real, verified command.
+specifically.
+
+PROVEN: the Nx task graph genuinely encodes the shell->remote
+architecture (not just 3 unrelated scripts run in parallel).
+frontend-react/project.json declares implicitDependencies: [frontend-angular]
+and a real "copy-remote" target that depends on frontend-angular:build,
+then copies its actual dist output into frontend-react/public/angular-remote/
+as an Nx task (not a manual step). frontend-react's build depends on
+copy-remote. Verified: `nx run frontend-react:build` genuinely runs
+frontend-angular's build FIRST, then copies its real output, THEN
+builds React - confirmed by inspecting frontend-react/dist/angular-remote/
+after the run and finding the real Angular bundle files there with
+<base href="/angular-remote/"> correctly rescoped (this base-href fix
+was also a real bug found and fixed while wiring this up).
 
 Full local run (3 terminals, from repo root):
   1) cd backend          && npm install && node src/app.js        (port 3000)

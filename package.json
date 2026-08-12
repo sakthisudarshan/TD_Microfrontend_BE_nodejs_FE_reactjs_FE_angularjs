@@ -1,0 +1,8 @@
+{
+  "name": "microfrontend-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "devDependencies": {
+    "nx": "18.3.5"
+  }
+}

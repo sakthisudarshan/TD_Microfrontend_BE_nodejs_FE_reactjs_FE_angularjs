@@ -1,4 +1,4 @@
-# npm-ls — JavaScript / Node.js 18
+# npm-ls — JavaScript / Node.js 22
 
 Full dependency tree for the real `package.json`.
 

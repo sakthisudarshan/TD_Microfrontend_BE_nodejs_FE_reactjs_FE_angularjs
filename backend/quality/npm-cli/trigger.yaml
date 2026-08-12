@@ -1,6 +1,6 @@
 tool: npm-cli
 language: javascript
-language_version: "18"
+language_version: "22"
 technique: "Dependency Risk (SCA)"
 classification: "Reproducible Install Verification"
 target_files: [../../package-lock.json]

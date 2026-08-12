@@ -1,6 +1,6 @@
 tool: npm-ls
 language: javascript
-language_version: "20"
+language_version: "22"
 technique: "Dependency Risk (SCA)"
 classification: "Dependency Tree Audit"
 target_files: [../../package.json]

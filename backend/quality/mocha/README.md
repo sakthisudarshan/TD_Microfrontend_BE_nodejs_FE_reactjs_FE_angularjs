@@ -1,4 +1,4 @@
-# mocha — JavaScript / Node.js 18
+# mocha — JavaScript / Node.js 22
 
 The real test suite for this API: `test/pricing.test.js` (unit) and
 `test/app.test.js` (integration, via supertest against the real Express app).

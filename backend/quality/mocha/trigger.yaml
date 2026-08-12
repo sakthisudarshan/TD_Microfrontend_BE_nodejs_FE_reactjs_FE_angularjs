@@ -1,6 +1,6 @@
 tool: mocha
 language: javascript
-language_version: "20"
+language_version: "22"
 technique: "CI/CD Integration Test"
 classification: "Test Execution"
 target_files: [../../test/]

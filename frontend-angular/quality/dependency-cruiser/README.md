@@ -1,4 +1,4 @@
-# dependency-cruiser -- Angular 19
+# dependency-cruiser -- Angular 18
 
 moduleA imports moduleB which imports moduleA back, enough to genuinely
 trigger the no-circular rule.

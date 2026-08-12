@@ -1,6 +1,6 @@
 tool: nyc
 language: javascript
-language_version: "20"
+language_version: "22"
 technique: "Statement / Branch Coverage"
 target_files: [../../src/]
 run:

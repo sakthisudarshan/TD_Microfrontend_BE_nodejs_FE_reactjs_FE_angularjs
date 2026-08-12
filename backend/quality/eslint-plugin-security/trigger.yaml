@@ -1,6 +1,6 @@
 tool: eslint-plugin-security
 language: javascript
-language_version: "20"
+language_version: "22"
 technique: "Static Application Security Testing"
 classification: "SAST Finding"
 target_files: [../../src/, ../../.eslintrc.json]

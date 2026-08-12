@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { formatWidgetCount } from "./widgets";
 
 // This shell connects to backend/'s real API (/api/widgets) AND embeds
 // frontend-angular/'s real, independently-built app via an iframe -
@@ -19,6 +20,7 @@ export default function App() {
   return (
     <div>
       <h1>Micro-Frontend Shell (React)</h1>
+      <p>{formatWidgetCount(widgets.length)}</p>
       <ul>
         {widgets.map((w) => (
           <li key={w.id}>{w.label}</li>

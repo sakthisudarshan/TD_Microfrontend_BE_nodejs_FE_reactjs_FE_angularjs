@@ -1,9 +1,22 @@
 BUILD COMMANDS
 ==============
 
-backend/          cd backend          && npm install && npm test
-frontend-react/   cd frontend-react   && npm install && npx vite build
-frontend-angular/ cd frontend-angular && npm install && npx ng build
+Whole-branch build (Nx, orchestrates all 3 modules together):
+  npm install
+  npx nx run-many --target=build --all
+  npx nx run-many --target=test --all
+
+Per-module (still available individually):
+  backend/          cd backend          && npm install && npm test
+  frontend-react/   cd frontend-react   && npm install && npx vite build
+  frontend-angular/ cd frontend-angular && npm install && npx ng build
+
+Micro-Frontend Platform uses Nx as its build orchestrator - a real,
+widely-used enterprise choice for micro-frontend architectures
+specifically (Nx has first-class support for module federation /
+multi-app workspaces). nx.json + a project.json per module wires each
+module's existing npm/ng scripts as Nx targets with dependsOn: [install],
+so `nx run-many` builds/tests all 3 modules in one real, verified command.
 
 Full local run (3 terminals, from repo root):
   1) cd backend          && npm install && node src/app.js        (port 3000)

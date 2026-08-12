@@ -1,0 +1,10 @@
+{
+  "name": "frontend-react",
+  "root": "frontend-react",
+  "projectType": "application",
+  "targets": {
+    "install": { "executor": "nx:run-commands", "options": { "command": "npm install", "cwd": "frontend-react" } },
+    "build": { "executor": "nx:run-commands", "options": { "command": "npm run build", "cwd": "frontend-react" }, "dependsOn": ["install"] },
+    "test": { "executor": "nx:run-commands", "options": { "command": "npm test", "cwd": "frontend-react" }, "dependsOn": ["install"] }
+  }
+}

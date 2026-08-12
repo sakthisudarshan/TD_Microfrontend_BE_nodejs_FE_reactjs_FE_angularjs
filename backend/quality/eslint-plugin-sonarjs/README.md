@@ -1,4 +1,4 @@
-# eslint-plugin-sonarjs — JavaScript / Node.js 18
+# eslint-plugin-sonarjs — JavaScript / Node.js 22
 
 Loaded in `.eslintrc.json`, scanning `src/app.js`'s real Express setup.
 

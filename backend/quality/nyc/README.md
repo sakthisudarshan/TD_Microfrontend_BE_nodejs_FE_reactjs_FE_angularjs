@@ -1,4 +1,4 @@
-# nyc — JavaScript / Node.js 20
+# nyc — JavaScript / Node.js 22
 
 Runs against the real mocha test suite in `test/`. `test/pricing.test.js`
 deliberately leaves branches untested, so gaps are genuine.

@@ -1,4 +1,4 @@
-# opentelemetry-sdk-node -- Angular 17
+# opentelemetry-sdk-node -- Angular 18
 
 A minimal service instrumented with the OpenTelemetry Node SDK.
 

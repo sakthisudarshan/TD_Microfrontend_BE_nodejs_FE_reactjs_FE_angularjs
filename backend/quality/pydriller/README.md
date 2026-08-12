@@ -1,4 +1,4 @@
-# pydriller — JavaScript / Node.js 20
+# pydriller — JavaScript / Node.js 22
 
 Mines this repo's own real git commit history — pydriller is a Python
 tool regardless of the target language, so it's invoked from the repo

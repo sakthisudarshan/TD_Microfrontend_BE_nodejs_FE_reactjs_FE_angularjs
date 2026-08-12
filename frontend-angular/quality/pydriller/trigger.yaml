@@ -1,6 +1,6 @@
 tool: pydriller
 language: typescript
-language_version: "Angular 17"
+language_version: "Angular 18"
 technique: "Development Process Analysis"
 classification: "Code Churn"
 target_files: []

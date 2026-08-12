@@ -1,4 +1,4 @@
-# stryker-js — JavaScript / Node.js 18
+# stryker-js — JavaScript / Node.js 22
 
 Mutation testing against `src/app.js`, using
 `test/pricing.test.js` as the kill oracle. Config at `../stryker.conf.json`.

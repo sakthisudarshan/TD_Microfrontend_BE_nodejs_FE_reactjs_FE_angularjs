@@ -1,4 +1,4 @@
-# lizard — JavaScript / Node.js 20
+# lizard — JavaScript / Node.js 22
 
 Cyclomatic complexity against the real `calculateOrderTotal` (4 combining
 boolean inputs) and `classifyOrderSize` (5-tier branch) in

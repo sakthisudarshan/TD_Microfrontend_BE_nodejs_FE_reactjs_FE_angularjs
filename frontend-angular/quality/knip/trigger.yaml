@@ -1,6 +1,6 @@
 tool: knip
 language: typescript
-language_version: "Angular 16"
+language_version: "Angular 18"
 technique: "Static Code Analysis"
 classification: "Unused Export Detection"
 target_files: [index.ts, utils.ts]

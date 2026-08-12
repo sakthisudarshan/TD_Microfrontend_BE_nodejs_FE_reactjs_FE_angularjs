@@ -1,6 +1,6 @@
 tool: jscpd
 language: javascript
-language_version: "20"
+language_version: "22"
 technique: "Code Quality Auditing"
 classification: "Code Duplication Detection"
 target_files: [../../src/app.js, ../../src/app.js]

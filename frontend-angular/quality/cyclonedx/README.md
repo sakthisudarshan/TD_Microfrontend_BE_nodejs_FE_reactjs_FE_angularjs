@@ -1,4 +1,4 @@
-# cyclonedx -- Angular 16
+# cyclonedx -- Angular 18
 
 Minimal package.json to generate a real software bill of materials from.
 

@@ -1,6 +1,6 @@
 tool: stryker-js
 language: javascript
-language_version: "18"
+language_version: "22"
 technique: "Mutation Testing"
 classification: "Mutation Score"
 target_files: [../../src/app.js, ../../stryker.conf.json]

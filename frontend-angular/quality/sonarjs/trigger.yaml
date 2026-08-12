@@ -1,6 +1,6 @@
 tool: eslint-plugin-sonarjs
 language: typescript
-language_version: "Angular 19"
+language_version: "Angular 18"
 technique: "Readability / Maintainability"
 classification: "Cognitive Complexity"
 target_files: [cognitiveSample.ts]

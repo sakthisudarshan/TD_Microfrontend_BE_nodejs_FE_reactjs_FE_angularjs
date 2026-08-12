@@ -1,4 +1,4 @@
-# eslint — JavaScript / Node.js 18
+# eslint — JavaScript / Node.js 22
 
 Lints the real `src/` tree (`.eslintrc.json` at the project root).
 

@@ -1,6 +1,6 @@
 tool: diff-cover
 language: javascript
-language_version: "18"
+language_version: "22"
 technique: "Regression / Coverage Delta"
 classification: "Coverage Delta %"
 target_files: [../../coverage/cobertura-coverage.xml]

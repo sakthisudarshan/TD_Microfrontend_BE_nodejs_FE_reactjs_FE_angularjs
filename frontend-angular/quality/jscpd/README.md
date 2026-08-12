@@ -1,4 +1,4 @@
-# jscpd -- Angular 19
+# jscpd -- Angular 18
 
 Two files sharing one identical block (>= minLines 5 / minTokens 50) to
 genuinely trigger cross-file duplicate detection.

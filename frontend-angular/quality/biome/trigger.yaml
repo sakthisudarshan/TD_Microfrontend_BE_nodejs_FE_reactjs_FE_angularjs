@@ -1,6 +1,6 @@
 tool: biome
 language: typescript
-language_version: "Angular 19"
+language_version: "Angular 18"
 technique: "Static Code Analysis"
 classification: "Lint / Rule Violations"
 target_files: [lintViolations.ts]

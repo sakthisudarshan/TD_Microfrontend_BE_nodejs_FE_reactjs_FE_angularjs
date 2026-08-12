@@ -32,8 +32,12 @@ ARCHITECTURE — HOW THE PIECES CONNECT
 
                     ┌─────────────────────────┐
                     │   backend/ (Node+Express) │
-                    │   GET /api/widgets         │
-                    │   GET /health               │
+                    │   src/routes/widgets.js    │
+                    │     GET/POST /api/widgets   │
+                    │   src/routes/health.js     │
+                    │     GET /health, /health/detail│
+                    │   src/data/widgets.js       │
+                    │     (in-memory data layer)  │
                     └───────────┬────────────┬───┘
                                 │            │
                     fetch()     │            │  fetch()
@@ -52,7 +56,10 @@ ARCHITECTURE — HOW THE PIECES CONNECT
   — no logic is duplicated between them.
 - frontend-react/  is the shell. It renders its own UI AND embeds the
   Angular remote via a live iframe — this is what makes the branch a real
-  micro-frontend, not two disconnected apps.
+  micro-frontend, not two disconnected apps. It has its own real
+  components: SearchBar.jsx (client-side filter), Toolbar.jsx (creates
+  widgets via POST /api/widgets), and src/filter.js (pure filter logic,
+  tested).
 - frontend-angular/  is a fully independent, separately-buildable app.
   Its build output is copied into frontend-react/public/angular-remote/
   so the shell can serve and embed it. This copy step is the one manual

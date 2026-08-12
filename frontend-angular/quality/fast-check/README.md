@@ -1,4 +1,4 @@
-# fast-check -- Angular 17
+# fast-check -- Angular 18
 
 A round-trip property (reverse(reverse(s)) === s) verified across
 randomly generated string inputs.

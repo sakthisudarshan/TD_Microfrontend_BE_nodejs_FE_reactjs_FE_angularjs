@@ -1,4 +1,4 @@
-# jscpd — JavaScript / Node.js 20
+# jscpd — JavaScript / Node.js 22
 
 `src/app.js`'s export route copy-pastes
 `src/app.js::productsToCsv` instead of calling it — a real

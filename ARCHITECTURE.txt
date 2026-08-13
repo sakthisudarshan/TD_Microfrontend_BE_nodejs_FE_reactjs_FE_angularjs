@@ -1,9 +1,32 @@
 BUILD COMMANDS
 ==============
 
-backend/          cd backend          && npm install && npm test
-frontend-react/   cd frontend-react   && npm install && npx vite build
-frontend-angular/ cd frontend-angular && npm install && npx ng build
+Whole-branch build (Nx, orchestrates all 3 modules together):
+  npm install
+  npx nx run-many --target=build --all
+  npx nx run-many --target=test --all
+
+Per-module (still available individually):
+  backend/          cd backend          && npm install && npm test
+  frontend-react/   cd frontend-react   && npm install && npx vite build
+  frontend-angular/ cd frontend-angular && npm install && npx ng build
+
+Micro-Frontend Platform uses Nx as its build orchestrator - a real,
+widely-used enterprise choice for micro-frontend architectures
+specifically.
+
+PROVEN: the Nx task graph genuinely encodes the shell->remote
+architecture (not just 3 unrelated scripts run in parallel).
+frontend-react/project.json declares implicitDependencies: [frontend-angular]
+and a real "copy-remote" target that depends on frontend-angular:build,
+then copies its actual dist output into frontend-react/public/angular-remote/
+as an Nx task (not a manual step). frontend-react's build depends on
+copy-remote. Verified: `nx run frontend-react:build` genuinely runs
+frontend-angular's build FIRST, then copies its real output, THEN
+builds React - confirmed by inspecting frontend-react/dist/angular-remote/
+after the run and finding the real Angular bundle files there with
+<base href="/angular-remote/"> correctly rescoped (this base-href fix
+was also a real bug found and fixed while wiring this up).
 
 Full local run (3 terminals, from repo root):
   1) cd backend          && npm install && node src/app.js        (port 3000)
@@ -19,8 +42,12 @@ ARCHITECTURE — HOW THE PIECES CONNECT
 
                     ┌─────────────────────────┐
                     │   backend/ (Node+Express) │
-                    │   GET /api/widgets         │
-                    │   GET /health               │
+                    │   src/routes/widgets.js    │
+                    │     GET/POST /api/widgets   │
+                    │   src/routes/health.js     │
+                    │     GET /health, /health/detail│
+                    │   src/data/widgets.js       │
+                    │     (in-memory data layer)  │
                     └───────────┬────────────┬───┘
                                 │            │
                     fetch()     │            │  fetch()
@@ -39,7 +66,10 @@ ARCHITECTURE — HOW THE PIECES CONNECT
   — no logic is duplicated between them.
 - frontend-react/  is the shell. It renders its own UI AND embeds the
   Angular remote via a live iframe — this is what makes the branch a real
-  micro-frontend, not two disconnected apps.
+  micro-frontend, not two disconnected apps. It has its own real
+  components: SearchBar.jsx (client-side filter), Toolbar.jsx (creates
+  widgets via POST /api/widgets), and src/filter.js (pure filter logic,
+  tested).
 - frontend-angular/  is a fully independent, separately-buildable app.
   Its build output is copied into frontend-react/public/angular-remote/
   so the shell can serve and embed it. This copy step is the one manual

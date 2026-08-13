@@ -1,6 +1,6 @@
 tool: eslint-plugin-sonarjs
 language: javascript
-language_version: "24"
+language_version: "22"
 technique: "Code Quality Auditing"
 classification: "Code Smell Detection"
 target_files: [../../src/app.js]

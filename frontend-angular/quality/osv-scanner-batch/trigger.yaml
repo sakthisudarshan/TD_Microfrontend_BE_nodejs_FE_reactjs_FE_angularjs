@@ -4,5 +4,5 @@ language_version: "Angular 18"
 technique: "Dependency Risk (SCA)"
 classification: "Vulnerability Dependency Detection"
 target_files: [package.json]
-run: {command: "bash run_osv_scanner_batch.sh"}
+run: {command: "osv-scanner --lockfile=package.json --format=json"}
 expects: {known_cve_count_gt_0: true}

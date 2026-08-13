@@ -4,5 +4,5 @@ language_version: "Angular 18"
 technique: "Supply Chain Security"
 classification: "SBOM Generation"
 target_files: [package.json]
-run: {command: "bash run_oss_review_toolkit.sh"}
+run: {command: "npx ort analyze -i . -o ./ort-results"}
 expects: {sbom_generated: true}

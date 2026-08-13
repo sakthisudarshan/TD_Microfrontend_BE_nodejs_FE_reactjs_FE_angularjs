@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microfrontend-backend
+  labels:
+    app: microfrontend-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: microfrontend-backend
+  template:
+    metadata:
+      labels:
+        app: microfrontend-backend
+    spec:
+      containers:
+        - name: microfrontend-backend
+          image: microfrontend-backend:node18
+          ports:
+            - containerPort: 3000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: microfrontend-backend
+spec:
+  selector:
+    app: microfrontend-backend
+  ports:
+    - port: 80
+      targetPort: 3000

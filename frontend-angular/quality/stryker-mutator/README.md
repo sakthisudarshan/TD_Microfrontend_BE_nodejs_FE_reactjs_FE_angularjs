@@ -1,4 +1,4 @@
-# stryker-mutator -- Angular 19
+# stryker-mutator -- Angular 18
 
 Two tiny functions plus tests tight enough to kill mutants (+ -> -,
 === -> !==).

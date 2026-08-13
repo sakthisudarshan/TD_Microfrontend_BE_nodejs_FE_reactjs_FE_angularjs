@@ -1,6 +1,6 @@
 tool: pydriller
 language: javascript
-language_version: "24"
+language_version: "22"
 technique: "Development Process Analysis"
 classification: "Code Churn"
 target_files: []

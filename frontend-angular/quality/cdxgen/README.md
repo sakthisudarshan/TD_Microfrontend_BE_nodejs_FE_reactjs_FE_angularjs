@@ -1,4 +1,4 @@
-# cdxgen -- Angular 16
+# cdxgen -- Angular 18
 
 Minimal package.json to generate a real software bill of materials from.
 

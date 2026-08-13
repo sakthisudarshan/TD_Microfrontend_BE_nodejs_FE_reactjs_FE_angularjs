@@ -1,4 +1,4 @@
-# oss-review-toolkit -- Angular 16
+# oss-review-toolkit -- Angular 18
 
 Minimal package.json to generate a real software bill of materials from.
 

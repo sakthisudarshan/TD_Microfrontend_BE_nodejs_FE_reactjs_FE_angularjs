@@ -1,4 +1,4 @@
-# grype -- Angular 16
+# grype -- Angular 18
 
 package.json pins lodash@4.17.15 (CVE-2020-8203 prototype pollution) and
 minimist@0.0.8 (CVE-2020-7598 prototype pollution), enough to genuinely

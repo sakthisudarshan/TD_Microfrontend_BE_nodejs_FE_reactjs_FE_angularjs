@@ -1,4 +1,4 @@
-# eslint-plugin-security — JavaScript / Node.js 24
+# eslint-plugin-security — JavaScript / Node.js 22
 
 Loaded as part of this project's real `.eslintrc.json`, scanning `src/`.
 

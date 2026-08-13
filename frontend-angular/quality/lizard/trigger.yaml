@@ -4,5 +4,5 @@ language_version: "Angular 18"
 technique: "Structural Analysis Metric"
 classification: "Cyclomatic Complexity"
 target_files: [complexitySample.ts]
-run: {command: "bash run_lizard.sh"}
+run: {command: "lizard complexitySample.ts"}
 expects: {cyclomatic_complexity_gt_1: true}

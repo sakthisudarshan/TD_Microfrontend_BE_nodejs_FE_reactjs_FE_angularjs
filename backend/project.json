@@ -1,0 +1,10 @@
+{
+  "name": "backend",
+  "root": "backend",
+  "projectType": "application",
+  "targets": {
+    "install": { "executor": "nx:run-commands", "options": { "command": "npm install", "cwd": "backend" } },
+    "build": { "executor": "nx:run-commands", "options": { "command": "echo backend has no bundling step (plain Node)", "cwd": "backend" }, "dependsOn": ["install"] },
+    "test": { "executor": "nx:run-commands", "options": { "command": "npm test", "cwd": "backend" }, "dependsOn": ["install"] }
+  }
+}

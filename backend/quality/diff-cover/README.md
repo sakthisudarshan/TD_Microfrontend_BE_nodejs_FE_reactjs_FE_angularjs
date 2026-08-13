@@ -1,4 +1,4 @@
-# diff-cover — JavaScript / Node.js 24
+# diff-cover — JavaScript / Node.js 22
 
 Coverage delta against `main` for this branch's real diff, using nyc's
 cobertura output.

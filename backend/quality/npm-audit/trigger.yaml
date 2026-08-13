@@ -1,6 +1,6 @@
 tool: npm-audit
 language: javascript
-language_version: "24"
+language_version: "22"
 technique: "Dependency Risk (SCA)"
 classification: "Vulnerability Dependency Detection"
 target_files: [../../package.json, ../../package-lock.json]

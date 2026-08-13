@@ -1,0 +1,23 @@
+{
+  "name": "frontend-react",
+  "root": "frontend-react",
+  "projectType": "application",
+  "implicitDependencies": ["frontend-angular"],
+  "targets": {
+    "install": { "executor": "nx:run-commands", "options": { "command": "npm install", "cwd": "frontend-react" } },
+    "copy-remote": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node -e \"const fs=require('fs');const src='../frontend-angular/dist/frontend-angular/browser';const dest='public/angular-remote';fs.rmSync(dest,{recursive:true,force:true});fs.cpSync(src,dest,{recursive:true});console.log('copied real Angular build output ->', dest);\"",
+        "cwd": "frontend-react"
+      },
+      "dependsOn": ["install", "frontend-angular:build"]
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": { "command": "npm run build", "cwd": "frontend-react" },
+      "dependsOn": ["copy-remote"]
+    },
+    "test": { "executor": "nx:run-commands", "options": { "command": "npm test", "cwd": "frontend-react" }, "dependsOn": ["install"] }
+  }
+}

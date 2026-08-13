@@ -1,6 +1,6 @@
 tool: lizard
 language: javascript
-language_version: "24"
+language_version: "22"
 technique: "Structural Analysis"
 classification: "Cyclomatic Complexity"
 target_files: [../../src/app.js]

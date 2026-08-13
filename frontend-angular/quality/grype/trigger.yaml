@@ -1,6 +1,6 @@
 tool: grype
 language: typescript
-language_version: "Angular 19"
+language_version: "Angular 18"
 technique: "Dependency Risk (SCA)"
 classification: "Vulnerability Dependency Detection"
 target_files: [package.json]

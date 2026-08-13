@@ -1,6 +1,6 @@
 tool: eslint-plugin-security
 language: typescript
-language_version: "Angular 16"
+language_version: "Angular 18"
 technique: "Security White-box Testing (SAST)"
 classification: "Secure Coding Validation"
 target_files: [sastFixture.ts]

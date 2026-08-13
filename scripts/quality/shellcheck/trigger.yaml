@@ -1,0 +1,14 @@
+tool: shellcheck
+version: "0.9.0"
+language: shell
+language_version: "bash 5.2"
+technique: "Static Shell Script Analysis"
+classification: "Shell Linting"
+target_files: [shellcheckFixture.sh]
+run:
+  command: "bash run_shellcheck.sh"
+expects:
+  lint_report_generated: true
+  findings_detected: true
+verified_in_session: true
+verified_result: "ran for real against shellcheckFixture.sh: flagged SC2006 (legacy backticks), SC2035 (unadorned glob), SC2086 (unquoted $f, twice) and SC3014 (== not POSIX in sh) across lines 6, 8 and 10; exited 1"

@@ -1,0 +1,13 @@
+tool: checkov
+version: "3.3.10"
+language: terraform
+language_version: "1.7"
+technique: "Security & Compliance Scanning (IaC SAST)"
+classification: "Hardcoded Secret Detection"
+target_files: [checkovFixture.tf]
+run:
+  command: "bash run_checkov.sh"
+expects:
+  findings_detected: true
+verified_in_session: true
+verified_result: "ran for real against checkovFixture.tf: secrets scan detected CKV_SECRET_17 \"Stripe Access Key\" FAILED for the hardcoded env value at lines 8-9 (Passed: 0, Failed: 1, Skipped: 0); exited 1"

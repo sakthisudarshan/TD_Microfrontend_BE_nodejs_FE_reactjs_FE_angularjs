@@ -1,0 +1,14 @@
+tool: tflint
+version: "0.64.0"
+language: terraform
+language_version: "1.7"
+technique: "Static Configuration Analysis"
+classification: "IaC Linting"
+target_files: [tflintFixture.tf]
+run:
+  command: "bash run_tflint.sh"
+expects:
+  lint_report_generated: true
+  findings_detected: true
+verified_in_session: true
+verified_result: "ran for real against tflintFixture.tf (bundled ruleset.terraform 0.15.0): 2 issue(s) found -- terraform_required_version (module has no required_version constraint) and terraform_unused_declarations (variable \"unused_example\" declared but not used); exited 2"

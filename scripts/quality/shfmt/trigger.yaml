@@ -1,0 +1,13 @@
+tool: shfmt
+version: "3.8.0"
+language: shell
+language_version: "bash 5.2"
+technique: "Style/Formatting Analysis"
+classification: "Shell Formatting Validation"
+target_files: [shfmtFixture.sh]
+run:
+  command: "bash run_shfmt.sh"
+expects:
+  formatting_diff_detected: true
+verified_in_session: true
+verified_result: "ran for real against shfmtFixture.sh: shfmt -d produced a non-empty unified diff converting the mixed-indent if/for block to tab-indented form; exited 1"

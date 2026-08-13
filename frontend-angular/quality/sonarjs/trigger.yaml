@@ -4,5 +4,5 @@ language_version: "Angular 18"
 technique: "Readability / Maintainability"
 classification: "Cognitive Complexity"
 target_files: [cognitiveSample.ts]
-run: {command: "bash run_sonarjs.sh"}
+run: {command: "npx eslint cognitiveSample.ts"}
 expects: {cognitive_complexity_violation_reported: true}

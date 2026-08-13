@@ -1,6 +1,6 @@
 tool: oss-review-toolkit
 language: typescript
-language_version: "Angular 16"
+language_version: "Angular 18"
 technique: "Supply Chain Security"
 classification: "SBOM Generation"
 target_files: [package.json]

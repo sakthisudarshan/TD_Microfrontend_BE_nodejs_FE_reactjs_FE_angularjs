@@ -9,7 +9,7 @@
 | CC6.1 (Logical access) | `microfrontend-backend` exposes only its documented read/API endpoints - no unauthenticated write surface |
 | CC6.6 (Vulnerability management) | `quality/npm-audit` and `quality/eslint-plugin-security` fixtures run dependency and static-analysis security scans |
 | CC7.1 (Change detection) | Branch = `microfrontend_BE_nodejs20_FE_reactjs20_FE_angularjs16`, Node.js 20.x - version and provenance are pinned per branch |
-| CC7.2 (Monitoring) | `GET /health` provides a real liveness signal, wired into `infra/k8s-deployment.yaml`'s `readinessProbe` |
-| A1.2 (Availability — infrastructure) | `infra/Dockerfile`, `infra/k8s-deployment.yaml`, and `infra/main.tf` define the deployable/reproducible infrastructure for this service |
+| CC7.2 (Monitoring) | `GET /health` provides a real liveness signal, wired into a real liveness signal |
+| A1.2 (Availability — infrastructure) | `backend`, `frontend-react`, and `frontend-angular` define the deployable service architecture |
 
 This declaration covers the backend service in this branch (`microfrontend_BE_nodejs20_FE_reactjs20_FE_angularjs16`). It is a repository-level control mapping, not an attestation issued by an auditor.

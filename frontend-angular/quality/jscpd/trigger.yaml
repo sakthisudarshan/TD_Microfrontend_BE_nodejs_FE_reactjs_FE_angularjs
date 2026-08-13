@@ -5,5 +5,5 @@ language_version: "Angular 18"
 technique: "Code Quality Auditing"
 classification: "Code Duplication Detection"
 target_files: [retailOrderProcessor.ts, wholesaleOrderProcessor.ts]
-run: {command: "bash run_jscpd.sh"}
+run: {command: "npx jscpd --languages typescript --min-lines 5 --min-tokens 50 --reporters console,json ."}
 expects: {duplicate_clone_detected: true}

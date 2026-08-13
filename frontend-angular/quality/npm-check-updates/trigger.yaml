@@ -4,5 +4,5 @@ language_version: "Angular 18"
 technique: "Dependency Risk (SCA)"
 classification: "Vulnerability Dependency Detection"
 target_files: [package.json]
-run: {command: "bash run_npm_check_updates.sh"}
+run: {command: "npx npm-check-updates"}
 expects: {known_cve_count_gt_0: true}

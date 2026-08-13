@@ -4,5 +4,5 @@ language_version: "Angular 18"
 technique: "Supply Chain Security"
 classification: "SBOM Generation"
 target_files: [package.json]
-run: {command: "bash run_cyclonedx.sh"}
+run: {command: "npx cyclonedx-npm --output-file bom.json"}
 expects: {sbom_generated: true}

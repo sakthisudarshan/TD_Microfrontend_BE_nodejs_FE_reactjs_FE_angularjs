@@ -1,4 +1,4 @@
-# eslint-plugin-security -- Angular 19
+# eslint-plugin-security -- Angular 18
 
 Unsanitized child_process.exec and eval() usage, enough to genuinely
 trigger detect-child-process and detect-eval-with-expression rules.

@@ -1,6 +1,6 @@
 tool: dependency-cruiser
 language: typescript
-language_version: "Angular 17"
+language_version: "Angular 18"
 technique: "Static Code Analysis"
 classification: "Circular Dependency Detection"
 target_files: [moduleA.ts, moduleB.ts]

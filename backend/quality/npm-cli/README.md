@@ -1,4 +1,4 @@
-# npm-cli — JavaScript / Node.js 24
+# npm-cli — JavaScript / Node.js 22
 
 Verifies a clean, reproducible install from the real lockfile.
 

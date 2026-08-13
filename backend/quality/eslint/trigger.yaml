@@ -1,6 +1,6 @@
 tool: eslint
 language: javascript
-language_version: "24"
+language_version: "22"
 technique: "Code Quality Auditing"
 classification: "Static Lint Analysis"
 target_files: [../../src/]

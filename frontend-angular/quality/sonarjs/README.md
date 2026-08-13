@@ -1,4 +1,4 @@
-# sonarjs -- Angular 19
+# sonarjs -- Angular 18
 
 Deeply nested conditionals, enough to genuinely trigger sonarjs'
 cognitive-complexity rule.
